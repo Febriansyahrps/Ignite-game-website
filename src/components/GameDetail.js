@@ -134,18 +134,18 @@ const BackButton = styled(motion.button)`
   }
 `;
 const Stats = styled(motion.div)`
-  padding-inline: 5rem;
+  padding: 0 5rem;
   display: flex;
   justify-content: space-between;
   @media screen and (max-width: 1060px) {
-    padding-inline: 3rem;
+    padding: 0 3rem;
   }
   @media screen and (max-width: 700px) {
     flex-direction: column;
-    padding-inline: 2rem;
+    padding: 0 2rem;
   }
   @media screen and (max-width: 480px) {
-    padding-inline: 2rem;
+    padding: 0 2rem;
   }
 `;
 const Rating = styled(motion.div)`
@@ -181,7 +181,7 @@ const Platforms = styled(motion.div)`
 const Description = styled(motion.div)`
   padding: 2rem 5rem;
   @media screen and (max-width: 1060px) {
-    padding-inline: 3rem;
+    padding: 2rem 3rem;
   }
   @media screen and (max-width: 700px) {
     padding: 1rem 2rem;
@@ -190,7 +190,7 @@ const Description = styled(motion.div)`
 const Media = styled(motion.div)`
   padding: 2rem 5rem;
   @media screen and (max-width: 1060px) {
-    padding-inline: 3rem;
+    padding: 2rem 3rem;
   }
   @media screen and (max-width: 700px) {
     padding: 1rem 2rem;
@@ -202,7 +202,7 @@ const ScreenShot = styled(motion.div)`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 1rem;
   @media screen and (max-width: 1060px) {
-    padding-inline: 3rem;
+    padding: 2rem 3rem;
   }
   @media screen and (max-width: 700px) {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

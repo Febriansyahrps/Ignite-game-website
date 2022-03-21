@@ -104,7 +104,7 @@ const Home = () => {
 };
 
 const GameList = styled(motion.div)`
-  padding: 0 5rem 3rem 5rem;
+  padding: 0 5rem;
   h1 {
     padding: 3rem 0 1rem 0;
     color: #ff7676;

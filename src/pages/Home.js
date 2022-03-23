@@ -7,6 +7,7 @@ import Game from "../components/Game";
 import GameDetail from "../components/GameDetail";
 import { useLocation } from "react-router-dom";
 import deleteLogo from "../img/delete.svg";
+import Loading from "../components/Loading";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(gamesData());
   }, [dispatch]);
-  const { popular, newest, upcoming, searched } = useSelector(
+  const { popular, newest, upcoming, searched, loading } = useSelector(
     (state) => state.games
   );
   const deleteSearchedHandler = () => {
@@ -57,6 +58,7 @@ const Home = () => {
         )}
         <GamesContainer>
           <h1>Popular Games</h1>
+          {loading && <Loading />}
           <Games>
             {popular.map((game) => (
               <Game
@@ -72,6 +74,7 @@ const Home = () => {
         </GamesContainer>
         <GamesContainer>
           <h1>Newest Games</h1>
+          {loading && <Loading />}
           <Games>
             {newest.map((game) => (
               <Game
@@ -86,6 +89,7 @@ const Home = () => {
         </GamesContainer>
         <GamesContainer>
           <h1>Upcoming Games</h1>
+          {loading && <Loading />}
           <Games>
             {upcoming.map((game) => (
               <Game

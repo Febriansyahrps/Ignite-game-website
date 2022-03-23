@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { smallImage, platformIcon, GetStarRating } from "../util";
 import backImage from "../img/back.svg";
+import Loading from "./Loading";
 
 const GameDetail = ({ pathId }) => {
   const navigate = useNavigate();
@@ -21,8 +22,13 @@ const GameDetail = ({ pathId }) => {
   const { detail, screen, isLoading } = useSelector((state) => state.game);
   return (
     <>
-      {!isLoading && (
-        <CardShadow className="shadow" onClick={backNavigateHandler}>
+      <CardShadow className="shadow" onClick={backNavigateHandler}>
+        {isLoading && (
+          <LoadingContainer>
+            <Loading />
+          </LoadingContainer>
+        )}
+        {!isLoading && (
           <Detail layoutId={pathId}>
             <BackButton onClick={() => backButtonHandler()}>
               <img src={backImage} alt="go back" />
@@ -69,8 +75,8 @@ const GameDetail = ({ pathId }) => {
               ))}
             </ScreenShot>
           </Detail>
-        </CardShadow>
-      )}
+        )}
+      </CardShadow>
     </>
   );
 };
@@ -92,6 +98,16 @@ const CardShadow = styled(motion.div)`
   }
   &::-webkit-scrollbar-track {
     background: white;
+  }
+`;
+const LoadingContainer = styled(motion.div)`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    color: #fafafa;
   }
 `;
 const Detail = styled(motion.div)`
